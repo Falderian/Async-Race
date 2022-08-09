@@ -1,0 +1,31 @@
+footer {
+  width: 100vw;
+  height: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1vw;
+  color: white;
+  text-align: center;
+  background-color: #121C1E;
+  margin-top: 5px;
+}
+.link-github a {
+  text-decoration: none;
+  color: white;
+}
+.img-rss {
+  height: 2vh;
+  width: 4vw;
+  background: url('../../assets/rss.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.link-github:hover,
+.img-rss {
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: grey;
+}

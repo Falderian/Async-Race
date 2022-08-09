@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+}
+
+.header {
+  width: 100vw;
+  height: 4vh;
+  margin: 10px;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  margin-right: 2vw;
+}
+.buttons {
+  width: 6.5vw;
+  padding: 3px 3px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  background-color: darkslateblue;
+  font-size: 0.7vw;
+  color: wheat;
+  border: 2px solid darkmagenta;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.buttons:hover {
+  border: 2px solid crimson;
+  background-color: transparent;
+  color: white;
+}
+.btn-to_garage,
+.btn-to_winners {
+  background-color: darkred;
+  width: 8vw;
+  height: 4vh;
+  margin-right: 15px;
+  font-size: 0.9vw;
+}
+
+.page {
+  width: 100vw;
+  padding-left: 10px;
+  padding-right: 10px;
+} 
+

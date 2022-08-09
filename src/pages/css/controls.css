@@ -1,0 +1,35 @@
+.generate-cars {
+  width: 24vw;
+  margin-bottom: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.field-create,
+.field-update,
+.field-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.7vh;
+}
+
+.generate-input_text {
+  width: 13vw;
+  height: 2.3vh;
+}
+
+.generate-input_color {
+  width: 2.8vw;
+  height: 2.5vh;
+}
+
+.btn-race,
+.btn-reset {
+  background-color: darkred;
+  border-color: crimson;
+}
+.btn-generate_cars {
+  width: 10vw;
+}
+

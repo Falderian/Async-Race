@@ -1,0 +1,40 @@
+.title-winners {
+  padding-bottom: 3vh;
+}
+
+.table-winners {
+  color: white;
+  font-size: 1vw;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead {
+  background-color: rgb(42, 42, 241);
+  font-weight: 200;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px 10px;
+}
+
+.pagination-win {
+  justify-content: flex-start;
+  margin-top: 10vh;
+}
+
+.winner-notice {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  width: 60vw;
+  height: 10vh;
+  color: white;
+  font-size: 3.5vw;
+  font-weight: 500;
+  text-shadow: gold 1px -2px;
+}
+
+.hide {
+  display: none;
+}

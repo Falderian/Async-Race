@@ -1,0 +1,49 @@
+.container-car,
+.car {
+  display: flex;
+  flex-direction: column;
+}
+.car {
+  border-bottom: 3px dashed white;
+  margin-bottom: 1vh;
+}
+.car-options,
+.car-control {
+  display: flex;
+  flex-direction: row;
+  margin: 0.3vh 0;
+}
+.car-options_title {
+  color: wheat;
+  font-size: 1vw;
+  margin: 0.2vh 1vw;
+}
+.car-control_start,
+.car-control_stop {
+  width: 2.5vw;
+  height: 1.5vw;
+  margin-right: 0.3vw;
+  padding: 0;
+  background-color: black;
+  color: wheat;
+  border: 1px solid darkred;
+  font-size: 0.9vw;
+  transition: 0.5s;
+}
+
+.car-control_start:hover {
+  background-color: darkolivegreen;
+  border-color: wheat;
+}
+.car-control_stop:hover {
+  background-color: darkolivegreen;
+  border-color: wheat;
+}
+.car-img {
+  margin-left: 1vw;
+}
+.car-img svg,
+.car-img-win svg{
+  padding: 0;
+  margin: 0;
+}
