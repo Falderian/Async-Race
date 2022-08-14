@@ -1,5 +1,5 @@
-import { getWinnersAPI, countAllWinners } from './api_winners';
-import { getCarAPI } from '../garage/api_garage';
+import { getWinnersAPI, countAllWinners } from '../../api/api_winners';
+import { getCarAPI } from '../../api/api_garage';
 import { createWinnerUI } from '../UI/create_car';
 import { DescriptionCar } from '../garage/utils_garage';
 

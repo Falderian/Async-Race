@@ -1,4 +1,4 @@
-import { countAllWinners } from './api_winners';
+import { countAllWinners } from '../../api/api_winners';
 import { updateWinnersUI } from './update_winners';
 export let numberPageWinners = 1;
 

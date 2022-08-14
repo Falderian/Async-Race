@@ -1,4 +1,4 @@
-import { baseUrl } from '../garage/api_garage';
+import { baseUrl } from './api_garage';
 
 const winners = `${baseUrl}/winners`;
 export let countAllWinners = 0;

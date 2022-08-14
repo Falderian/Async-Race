@@ -1,9 +1,9 @@
-import { getCarsAPI,  getCarAPI } from './api_garage';
-import { createWinnerAPI, getAllWinnersAPI, updateWinnerAPI } from '../winners/api_winners';
-import { numberPage } from './buttons_garage';
+import { getCarsAPI,  getCarAPI } from '../../api/api_garage';
+import { createWinnerAPI, getAllWinnersAPI, updateWinnerAPI } from '../../api/api_winners';
+import { numberPage } from './listeners_for_buttons';
 import { DescriptionCar } from './utils_garage';
 import { updateWinnersUI } from '../winners/update_winners';
-import { driveEngineAPI, startEngineAPI, stopEngineAPI } from './api_engine';
+import { driveEngineAPI, startEngineAPI, stopEngineAPI } from '../../api/api_engine';
 
 const btnResetRace = <HTMLButtonElement>document.querySelector('.btn-reset');
 const btnRace = <HTMLButtonElement>document.querySelector('.btn-race');
@@ -14,7 +14,7 @@ const btnStartRave = <HTMLButtonElement>document.querySelector('.btn-race');
 const btnStopRace = <HTMLButtonElement>document.querySelector('.btn-reset');
 let time: number; 
 let resultRace: HTMLElement[] = [];
-
+const PERCENT_FROM_SCREEN = 15; 
 //add winner
 function addWinner(carWinner: HTMLElement, timeWinner: number) {
   const idWinner = Number(carWinner.dataset.car);
@@ -75,7 +75,7 @@ const startCar = async (idCar: number) => {
 
     const car = <HTMLElement>document.getElementById(`car-${idCar}`);
     const screenWidth = document.body.clientWidth;
-    const positionCar = screenWidth / 100 * 15;
+    const positionCar = screenWidth / 100 * PERCENT_FROM_SCREEN;
     const distanceAnimation = screenWidth - positionCar;
 
     infoAnimation[idCar] = animationCar(car, distanceAnimation, time);

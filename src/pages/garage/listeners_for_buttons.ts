@@ -1,7 +1,7 @@
-import { countAllCars, getCarsAPI, getCarAPI, createCarAPI, deleteCarAPI, updateCarAPI } from './api_garage';
+import { countAllCars, getCarsAPI, getCarAPI, createCarAPI, deleteCarAPI, updateCarAPI } from '../../api/api_garage';
 import { createCarUI } from '../UI/create_car';
 import { getRandomName, getRandomColor, DescriptionCar } from './utils_garage';
-import { getAllWinnersAPI, deleteWinnerAPI } from '../winners/api_winners';
+import { getAllWinnersAPI, deleteWinnerAPI } from '../../api/api_winners';
 
 import { resetRace } from './drive_car';
 import { updateWinnersUI } from '../winners/update_winners';
@@ -23,7 +23,8 @@ const btnUpdate = <HTMLInputElement>document.querySelector('.btn-update');
 
 let idUpdateCar: number;
 export let numberPage = 1;
-
+const MAX_CARS_PER_PAGE = 7;
+const GENER_100_CARS = 100;
 //car_update
 export const updateCarsUI = () => {
   getCarsAPI(numberPage).then((arr: DescriptionCar[]) => {
@@ -51,7 +52,7 @@ btnPrevCars.addEventListener('click', () => {
 });
 
 btnNextCars.addEventListener('click', () => {
-  if (numberPage * 7 >= countAllCars) {
+  if (numberPage * MAX_CARS_PER_PAGE >= countAllCars) {
     btnNextCars.setAttribute('disabled', 'disabled');
   } else {
     btnPrevCars.removeAttribute('disabled');
@@ -106,7 +107,7 @@ generateNewCarBtn.addEventListener('click', (e) => {
       (createCarAPI({ 'name': nameNewCar, 'color': colorNewCar })).then(() => updateCarsUI());
     }
 
-    if (countAllCars % 7 === 0) btnNextCars.removeAttribute('disabled');
+    if (countAllCars % MAX_CARS_PER_PAGE === 0) btnNextCars.removeAttribute('disabled');
     inputTextCreate.value = '';
   }
 
@@ -125,7 +126,7 @@ generateNewCarBtn.addEventListener('click', (e) => {
 
 //generate cars
 btnGenerateCards.addEventListener('click', async () => {
-  for (let i = 0; i < 100; i++){
+  for (let i = 0; i < GENER_100_CARS; i++){
     const name = getRandomName();
     const color = getRandomColor();
   
