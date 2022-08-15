@@ -16,7 +16,7 @@ let time: number;
 let resultRace: HTMLElement[] = [];
 const PERCENT_FROM_SCREEN = 15; 
 //add winner
-function addWinner(carWinner: HTMLElement, timeWinner: number) {
+function addWinner(carWinner: HTMLElement, timeWinner: number): void {
   const idWinner = Number(carWinner.dataset.car);
   let timeWin = (timeWinner / 1000).toFixed(2);
   let wins = 1;
@@ -43,7 +43,7 @@ function addWinner(carWinner: HTMLElement, timeWinner: number) {
 }
 
 //animation
-function animationCar(car: HTMLElement, distance: number, duration: number) {
+function animationCar(car: HTMLElement, distance: number, duration: number): DescriptionCar {
   let startTime = 0;
   const idAnime = <DescriptionCar>{};
   
@@ -67,7 +67,7 @@ function animationCar(car: HTMLElement, distance: number, duration: number) {
   return idAnime;
 }
 
-const startCar = async (idCar: number) => {
+const startCar = async (idCar: number): Promise<void> => {
   startEngineAPI(idCar).then((obj) => {
     const velocity = Number(obj.velocity);
     const distance = Number(obj.distance);
@@ -88,7 +88,7 @@ const startCar = async (idCar: number) => {
   });
 };
 
-export const stopCar = async (idStop: number) => {
+export const stopCar = async (idStop: number): Promise<void> => {
   stopEngineAPI(idStop).then(() => {
     window.cancelAnimationFrame(infoAnimation[idStop].id);
     const car = <HTMLElement>document.getElementById(`car-${idStop}`);
@@ -96,12 +96,12 @@ export const stopCar = async (idStop: number) => {
   });
 };
 
-const startRaceCars = async (page: number) => {
+const startRaceCars = async (page: number): Promise<void> => {
   getCarsAPI(page, 7).then((arrCars: DescriptionCar[]) => 
   arrCars.forEach((elem) => startCar(elem.id)));
 };
 
-export const stopRaceCars = async (page: number) => {
+export const stopRaceCars = async (page: number): Promise<void> => {
   getCarsAPI(page, 7).then((arrCars: DescriptionCar[]) => {
    arrCars.forEach((elem) => stopCar(elem.id));
   });
@@ -109,7 +109,7 @@ export const stopRaceCars = async (page: number) => {
   noticeWinner.innerHTML = '';
 };
 
-export function resetRace() {
+export function resetRace(): void {
   if (!btnResetRace.hasAttribute('disabled')) {
     btnResetRace.setAttribute('disabled', 'disabled');
     btnRace.removeAttribute('disabled');

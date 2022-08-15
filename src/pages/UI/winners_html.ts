@@ -1,4 +1,4 @@
-export const winnersPage = `<div class="page winners-page hide">
+export const winnersPage: string = `<div class="page winners-page hide">
 <h1 class="title title-winners">Winners <span class="count-winners"></span></h1>
 <h3 class="title title-winners">Page #<span class="count-page_winners">1</span></h3>
 

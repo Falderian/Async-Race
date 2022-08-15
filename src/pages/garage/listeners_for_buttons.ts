@@ -26,7 +26,7 @@ export let numberPage = 1;
 const MAX_CARS_PER_PAGE = 7;
 const GENER_100_CARS = 100;
 //car_update
-export const updateCarsUI = () => {
+export const updateCarsUI = (): void => {
   getCarsAPI(numberPage).then((arr: DescriptionCar[]) => {
     containerCar.innerHTML = '';
     arr.forEach((car) => {

@@ -1,6 +1,6 @@
 import { createImageCarUI } from './create_image_car';
 
-export const createCarUI = (id: number, name: string, color: string) =>
+export const createCarUI = (id: number, name: string, color: string): string=>
   `<div class="car">
     <div class="car-options">
       <button class="buttons car-options_select" data-select=${id}>Select</button>
@@ -16,7 +16,7 @@ export const createCarUI = (id: number, name: string, color: string) =>
   </div>
 `;
 
-export const createWinnerUI = ( num: number, color: string, name: string, wins: number, bestTime: number) =>
+export const createWinnerUI = ( num: number, color: string, name: string, wins: number, bestTime: number): string =>
   `<tr">
     <td>${num}</td>
     <td>${createImageCarUI(color)}</td>

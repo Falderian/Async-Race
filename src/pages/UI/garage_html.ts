@@ -1,4 +1,4 @@
-export const garagePage = `<div class="page garage-page">
+export const garagePage: string= `<div class="page garage-page">
   <div class="generate-cars">
     <div class="field-create">
       <input class="generate-input_text text-create" type="text" autocomplete placeholder="Enter name сar...">

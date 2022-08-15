@@ -1,7 +1,7 @@
 import { garagePage } from './garage_html';
 import { winnersPage } from './winners_html';
 
-export const createBodyUI = async () => {
+export const createBodyUI = async (): Promise<void> => {
   const html = `
     <header class="header">
       <div class="nav">

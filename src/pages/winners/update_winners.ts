@@ -9,7 +9,7 @@ const countWinners = <HTMLElement>document.querySelector('.count-winners');
 export const numberPageWinners = 1;
 
 export const updateWinnersUI = () => {
-  let num = numberPageWinners * 10 - 10;
+  let CurrentPage = numberPageWinners * 10 - 10;
 
   getWinnersAPI(numberPageWinners).then((arr: DescriptionCar[]) => {
     containerWinners.innerHTML = '';
@@ -20,9 +20,9 @@ export const updateWinnersUI = () => {
       getCarAPI(car.id).then((oneCar) => {
         name = oneCar.name;
         color = oneCar.color;
-        num += 1;
+        CurrentPage += 1;
 
-        const oneWinner = `${createWinnerUI(num, color, name, car.wins, car.time)}`;
+        const oneWinner = `${createWinnerUI(CurrentPage, color, name, car.wins, car.time)}`;
         containerWinners.innerHTML += oneWinner;
       });
     });

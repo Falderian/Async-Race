@@ -1,4 +1,4 @@
-export const createImageCarUI = (color: string) =>
+export const createImageCarUI = (color: string) : string =>
   `<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
     width="6vw"  viewBox="0 0 1500.000000 550.000000">
     <g transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)" style="fill:${color};" stroke="white" stroke-width="5%">
