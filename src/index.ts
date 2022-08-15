@@ -1,0 +1,9 @@
+import './main.css';
+import './pages/UI/ui';
+import './api/api_garage';
+import './pages/garage/listeners_for_buttons';
+import './pages/garage/utils_garage';
+import './pages/garage/drive_car';
+import './api/api_winners';
+import './pages/winners/buttons_winners';
+import './score';
